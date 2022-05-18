@@ -27,9 +27,9 @@ from bpy_extras.object_utils import (
         )
 
 
-def add_type6(self, context):
+def add_4DirArrow(self, context, label):
 
-    label = "4DirArow"
+    label = "4DirArrow"
     scale_x = self.scale_x
     scale_y = self.scale_y
     verts = [
@@ -62,7 +62,7 @@ def add_type6(self, context):
             ]
 
 
-    make_curve(self, context, verts)
+    make_curve(self, context, verts, label)
 
 #
 # def add_type5(self, context):
@@ -381,7 +381,7 @@ def add_type6(self, context):
 #     make_curve(self, context, verts, lhandles, rhandles)
 
 
-def make_curve(self, context, verts):
+def make_curve(self, context, verts, label):
 
     types = self.types
     curveData = bpy.data.curves.new(name=label, type='CURVE')
@@ -537,7 +537,7 @@ class add_rigcurve(Operator, AddObjectHelper):
 #        if self.types == 5:
 #            add_type5(self, context)
         if self.types == 6:
-            add_type6(self, context)
+            add_4DirArrow(self, context, "4DirArrow")
 #        if self.types == 7:
 #            add_type7(self, context)
 #        if self.types == 8:

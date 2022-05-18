@@ -1,7 +1,5 @@
 # gpl: author d4mer
 
-# DevBo Task https://developer.blender.org/T37299
-
 bl_info = {
     "name": "Rig Controllers",
     "author": "D4mer",
@@ -31,437 +29,402 @@ from bpy_extras.object_utils import (
 
 def add_type6(self, context):
 
+    label = "4DirArow"
     scale_x = self.scale_x
     scale_y = self.scale_y
     verts = [
-            [-1.009675 * scale_x, -0.977991 * scale_y, 0.0,
-            -1.009675 * scale_x, -3.017713 * scale_y, 0.0,
-            -1.009675 * scale_x, -3.017713 * scale_y, 0.0,
-            -2 * scale_x, -3 * scale_y, 0.0],
-            [0 * scale_x, -5 * scale_y, 0.0,
-            2 * scale_x, -3 * scale_y, 0.0,
-            1 * scale_x, -3 * scale_y, 0.0,
-            1 * scale_x, -1 * scale_y, 0.0]
-#            ((3 * scale_x, -1 * scale_y, 0)),
-#            ((3 * scale_x, -2 * scale_y, 0)),
-#            ((5 * scale_x, 0 * scale_y, 0)),
-#            ((3 * scale_x, 2 * scale_y, 0)),
-#            ((3 * scale_x, 1 * scale_y, 0)),
-#            ((1 * scale_x, 1 * scale_y, 0)),
-#            ((1 * scale_x, 3 * scale_y, 0)),
-#            ((2 * scale_x, 3 * scale_y, 0)),
-#            ((0 * scale_x, 5 * scale_y, 0)),
-#            ((-2 * scale_x, 3 * scale_y, 0)),
-#            ((-1 * scale_x, 3 * scale_y, 0)),
-#            ((-1 * scale_x, 1 * scale_y, 0)),
-#            ((-3 * scale_x, 1 * scale_y, 0)),
-#            ((-3 * scale_x, 2 * scale_y, 0)),
-#            ((-5 * scale_x, 0 * scale_y, 0)),
-#            ((-3 * scale_x, -2 * scale_y, 0)),
-#            ((-3 * scale_x, -1 * scale_y, 0)),
-#            ((-1 * scale_x, -1 * scale_y, 0)),
+           (-1.009675, -0.977991, 0),
+            (-1.009675, -3.017713, 0),
+            (-1.009675, -3.017713, 0),
+            (-2, -3, 0),
+            (0, -5, 0),
+            (2, -3, 0),
+            (1, -3, 0),
+            (1, -1, 0),
+            (3, -1, 0),
+            (3, -2, 0),
+            (5, 0, 0),
+            (3, 2, 0),
+            (3, 1, 0),
+            (1, 1, 0),
+            (1, 3, 0),
+            (2, 3, 0),
+            (0, 5, 0),
+            (-2, 3, 0),
+            (-1, 3, 0),
+            (-1, 1, 0),
+            (-3, 1, 0),
+            (-3, 2, 0),
+            (-5, 0, 0),
+            (-3, -2, 0),
+            (-3, -1, 0),
+            (-1, -1, 0),
             ]
-    lhandles = [
-            [(-0.067558 * scale_x, 0.078418 * scale_y, 0.0),
-            (0.168759 * scale_x, -0.154334 * scale_y, 0.0),
-            (-0.236823 * scale_x, 0.262436 * scale_y, 0.0),
-            (0.233116 * scale_x, -0.596115 * scale_y, 0.0)],
-            [(0.498001 * scale_x, -0.493434 * scale_y, 0.0),
-            (0.375618 * scale_x, -0.55465 * scale_y, 0.0),
-            (0.634373 * scale_x, -0.49873 * scale_y, 0.0),
-            (0.225277 * scale_x, -0.526814 * scale_y, 0.0)]
-            ]
-    rhandles = [
-            [(0.161825 * scale_x, 0.053245 * scale_y, 0.0),
-            (-0.262003 * scale_x, -0.242566 * scale_y, 0.0),
-            (0.519691 * scale_x, 0.097329 * scale_y, 0.0),
-            (-0.233116 * scale_x, -1.403885 * scale_y, 0.0)],
-            [(0.404788 * scale_x, -0.474085 * scale_y, 0.0),
-            (0.533397 * scale_x, -0.644158 * scale_y, 0.0),
-            (0.371983 * scale_x, -0.316529 * scale_y, 0.0),
-            (0.077022 * scale_x, -0.881876 * scale_y, 0.0)]
-            ]
-    make_curve(self, context, verts, lhandles, rhandles)
 
 
-def add_type5(self, context):
+    make_curve(self, context, verts)
 
-    scale_x = self.scale_x
-    scale_y = self.scale_y
-    verts = [
-            [0.047131 * scale_x, 0.065832 * scale_y, 0.0,
-            0.010396 * scale_x, -0.186771 * scale_y, 0.0,
-            0.076107 * scale_x, 0.19414 * scale_y, 0.0,
-            0.0 * scale_x, -1.0 * scale_y, 0.0],
-            [0.086336 * scale_x, -0.377611 * scale_y, 0.0,
-            0.022417 * scale_x, -0.461301 * scale_y, 0.0,
-            0.079885 * scale_x, -0.281968 * scale_y, 0.0,
-            0.129212 * scale_x, -0.747702 * scale_y, 0.0]
-            ]
-    lhandles = [
-            [(-0.067558 * scale_x, 0.078419 * scale_y, 0.0),
-            (0.168759 * scale_x, -0.154335 * scale_y, 0.0),
-            (-0.236823 * scale_x, 0.262436 * scale_y, 0.0),
-            (0.233116 * scale_x, -0.596115 * scale_y, 0.0)],
-            [(0.047518 * scale_x, -0.350065 * scale_y, 0.0),
-            (0.086012 * scale_x, -0.481379 * scale_y, 0.0),
-            (-0.049213 * scale_x, -0.253793 * scale_y, 0.0),
-            (0.208763 * scale_x, -0.572534 * scale_y, 0.0)]
-            ]
-    rhandles = [
-            [(0.161825 * scale_x, 0.053245 * scale_y, 0.0),
-            (-0.262003 * scale_x, -0.242566 * scale_y, 0.0),
-            (0.519691 * scale_x, 0.097329 * scale_y, 0.0),
-            (-0.233116 * scale_x, -1.403885 * scale_y, 0.0)],
-            [(0.125156 * scale_x, -0.405159 * scale_y, 0.0),
-            (-0.086972 * scale_x, -0.426766 * scale_y, 0.0),
-            (0.262886 * scale_x, -0.321908 * scale_y, 0.0),
-            (0.049661 * scale_x, -0.92287 * scale_y, 0.0)]
-            ]
-    make_curve(self, context, verts, lhandles, rhandles)
+#
+# def add_type5(self, context):
+#
+#     scale_x = self.scale_x
+#     scale_y = self.scale_y
+#     verts = [
+#             [0.047131, 0.065832, 0.0,
+#             0.010396, -0.186771, 0.0,
+#             0.076107, 0.19414, 0.0,
+#             0.0, -1.0, 0.0],
+#             [0.086336, -0.377611, 0.0,
+#             0.022417, -0.461301, 0.0,
+#             0.079885, -0.281968, 0.0,
+#             0.129212, -0.747702, 0.0]
+#             ]
+#     lhandles = [
+#             [(-0.067558, 0.078419, 0.0),
+#             (0.168759, -0.154335, 0.0),
+#             (-0.236823, 0.262436, 0.0),
+#             (0.233116, -0.596115, 0.0)],
+#             [(0.047518, -0.350065, 0.0),
+#             (0.086012, -0.481379, 0.0),
+#             (-0.049213, -0.253793, 0.0),
+#             (0.208763, -0.572534, 0.0)]
+#             ]
+#     rhandles = [
+#             [(0.161825, 0.053245, 0.0),
+#             (-0.262003, -0.242566, 0.0),
+#             (0.519691, 0.097329, 0.0),
+#             (-0.233116, -1.403885, 0.0)],
+#             [(0.125156, -0.405159, 0.0),
+#             (-0.086972, -0.426766, 0.0),
+#             (0.262886, -0.321908, 0.0),
+#             (0.049661, -0.92287, 0.0)]
+#             ]
+#     make_curve(self, context, verts, lhandles, rhandles)
+#
+#
+# def add_type8(self, context):
+#
+#     scale_x = self.scale_x
+#     scale_y = self.scale_y
+#     verts = [
+#             [-0.850431, -0.009091,
+#             0.0, -0.818807, -0.130518,
+#             0.0, -0.944931, 0.055065,
+#             0.0, -0.393355, -0.035521,
+#             0.0, 0.0, 0.348298,
+#             0.0, 0.393355, -0.035521,
+#             0.0, 0.978373, 0.185638,
+#             0.0, 0.771617, 0.272819,
+#             0.0, 0.864179, 0.188103, 0.0]
+#             ]
+#     lhandles = [
+#             [(-0.90478, -0.025302, 0.0),
+#             (-0.753279, -0.085571, 0.0),
+#             (-1.06406, -0.047879, 0.0),
+#             (-0.622217, -0.022501, 0.0),
+#             (0.181, 0.34879, 0.0),
+#             (-0.101464, -0.063669, 0.0),
+#             (0.933064, 0.03001, 0.0),
+#             (0.82418, 0.39899, 0.0),
+#             (0.827377, 0.144945, 0.0)]
+#             ]
+#     rhandles = [
+#             [(-0.796079, 0.007121, 0.0),
+#             (-0.931521, -0.207832, 0.0),
+#             (-0.822288, 0.161045, 0.0),
+#             (0.101464, -0.063671, 0.0),
+#             (-0.181193, 0.347805, 0.0),
+#             (0.622217, -0.022502, 0.0),
+#             (1.022383, 0.336808, 0.0),
+#             (0.741059, 0.199468, 0.0),
+#             (0.900979, 0.231258, 0.0)]
+#             ]
+#     make_curve(self, context, verts, lhandles, rhandles)
+#
+#
+# def add_type3(self, context):
+#
+#     scale_x = self.scale_x
+#     scale_y = self.scale_y
+#     verts = [
+#             [-0.78652, -0.070157,
+#             0.0, -0.697972, -0.247246,
+#             0.0, -0.953385, -0.002048,
+#             0.0, 0.0, 0.0,
+#             0.0, 0.917448, 0.065788,
+#             0.0, 0.448535, 0.515947,
+#             0.0, 0.6111, 0.190831, 0.0]
+#             ]
+#     lhandles = [
+#             [(-0.86511, -0.112965, 0.0),
+#             (-0.61153, -0.156423, 0.0),
+#             (-1.103589, -0.199934, 0.0),
+#             (-0.446315, 0.135163, 0.0),
+#             (0.669383, -0.254463, 0.0),
+#             (0.721512, 0.802759, 0.0),
+#             (0.466815, 0.112232, 0.0)]
+#             ]
+#     rhandles = [
+#             [(-0.707927, -0.027348, 0.0),
+#             (-0.846662, -0.40347, 0.0),
+#             (-0.79875, 0.201677, 0.0),
+#             (0.446315, -0.135163, 0.0),
+#             (1.196752, 0.42637, 0.0),
+#             (0.289834, 0.349204, 0.0),
+#             (0.755381, 0.269428, 0.0)]
+#             ]
+#     make_curve(self, context, verts, lhandles, rhandles)
+#
+#
+# def add_type2(self, context):
+#
+#     scale_x = self.scale_x
+#     scale_y = self.scale_y
+#     verts = [
+#             [-0.719632, -0.08781, 0.0,
+#             -0.605138, -0.31612, 0.0,
+#             -0.935392, 0.0, 0.0,
+#             0.0, 0.0, 0.0,
+#             0.935392, 0.0, 0.0,
+#             0.605138, -0.316119, 0.0,
+#             0.719632, -0.08781, 0.0]
+#             ]
+#     lhandles = [
+#             [(-0.82125, -0.142999, 0.0),
+#             (-0.493366, -0.199027, 0.0),
+#             (-1.129601, -0.25513, 0.0),
+#             (-0.467584, 0.00044, 0.0),
+#             (0.735439, 0.262646, 0.0),
+#             (0.797395, -0.517531, 0.0),
+#             (0.618012, -0.032614, 0.0)]
+#             ]
+#     rhandles = [
+#             [(-0.618009, -0.032618, 0.0),
+#             (-0.797396, -0.517532, 0.0),
+#             (-0.735445, 0.262669, 0.0),
+#             (0.468041, -0.00044, 0.0),
+#             (1.129616, -0.255119, 0.0),
+#             (0.493365, -0.199025, 0.0),
+#             (0.821249, -0.143004, 0.0)]
+#             ]
+#     make_curve(self, context, verts, lhandles, rhandles)
+#
+#
+# def add_type10(self, context):
+#
+#     scale_x = self.scale_x
+#     scale_y = self.scale_y
+#     verts = [
+#             [-0.999637, 0.000348,
+#             0.0, 0.259532, -0.017841,
+#             0.0, 0.482303, 0.780429,
+#             0.0, 0.573183, 0.506898, 0.0],
+#             [0.259532, -0.017841,
+#             0.0, 0.554919, -0.140918,
+#             0.0, 0.752264, -0.819275,
+#             0.0, 0.824152, -0.514881, 0.0]
+#             ]
+#     lhandles = [
+#             [(-1.258333, -0.258348, 0.0),
+#             (-0.240006, -0.15259, 0.0),
+#             (0.79037, 0.857575, 0.0),
+#             (0.376782, 0.430157, 0.0)],
+#             [(0.224917, -0.010936, 0.0),
+#             (0.514858, -0.122809, 0.0),
+#             (1.057957, -0.886925, 0.0),
+#             (0.61945, -0.464285, 0.0)]
+#             ]
+#     rhandles = [
+#             [(-0.74094, 0.259045, 0.0),
+#             (0.768844, 0.119545, 0.0),
+#             (0.279083, 0.729538, 0.0),
+#             (0.643716, 0.534458, 0.0)],
+#             [(0.294147, -0.024746, 0.0),
+#             (1.03646, -0.358598, 0.0),
+#             (0.547718, -0.774008, 0.0),
+#             (0.897665, -0.533051, 0.0)]
+#             ]
+#     make_curve(self, context, verts, lhandles, rhandles)
+#
+#
+# def add_type9(self, context):
+#
+#     scale_x = self.scale_x
+#     scale_y = self.scale_y
+#     verts = [
+#             [0.260968, -0.668118,
+#             0.0, 0.108848, -0.381587,
+#             0.0, 0.537002, -0.77303,
+#             0.0, -0.600421, -0.583106,
+#             0.0, -0.600412, 0.583103,
+#             0.0, 0.537002, 0.773025,
+#             0.0, 0.108854, 0.381603,
+#             0.0, 0.260966, 0.668129, 0.0]
+#             ]
+#     lhandles = [
+#             [(0.387973, -0.594856, 0.0),
+#             (-0.027835, -0.532386, 0.0),
+#             (0.775133, -0.442883, 0.0),
+#             (-0.291333, -1.064385, 0.0),
+#             (-0.833382, 0.220321, 0.0),
+#             (0.291856, 1.112891, 0.0),
+#             (0.346161, 0.119777, 0.0),
+#             (0.133943, 0.741389, 0.0)]
+#             ]
+#     rhandles = [
+#             [(0.133951, -0.741386, 0.0),
+#             (0.346154, -0.119772, 0.0),
+#             (0.291863, -1.112896, 0.0),
+#             (-0.833407, -0.220324, 0.0),
+#             (-0.29134, 1.064389, 0.0),
+#             (0.775125, 0.442895, 0.0),
+#             (-0.029107, 0.533819, 0.0),
+#             (0.387981, 0.594873, 0.0)]
+#             ]
+#     make_curve(self, context, verts, lhandles, rhandles)
+#
+#
+# def add_type7(self, context):
+#
+#     scale_x = self.scale_x
+#     scale_y = self.scale_y
+#     verts = [
+#             [-0.850431, -0.009091,
+#             0.0, -0.818807, -0.130518,
+#             0.0, -0.944931, 0.055065, 0.0,
+#             -0.393355, -0.035521,
+#             0.0, 0.0, 0.348298,
+#             0.0, 0.393355, -0.035521,
+#             0.0, 0.944931, 0.055065,
+#             0.0, 0.818807, -0.130518,
+#             0.0, 0.850431, -0.009091, 0.0]
+#             ]
+#     lhandles = [
+#             [(-0.90478, -0.025302, 0.0),
+#             (-0.753279, -0.085571, 0.0),
+#             (-1.06406, -0.047879, 0.0),
+#             (-0.622217, -0.022502, 0.0),
+#             (0.181, 0.348791, 0.0),
+#             (-0.101464, -0.063671, 0.0),
+#             (0.822288, 0.161045, 0.0),
+#             (0.931521, -0.207832, 0.0),
+#             (0.796079, 0.007121, 0.0)]
+#             ]
+#     rhandles = [
+#             [(-0.796079, 0.007121, 0.0),
+#             (-0.931521, -0.207832, 0.0),
+#             (-0.822288, 0.161045, 0.0),
+#             (0.101464, -0.063671, 0.0),
+#             (-0.181193, 0.347805, 0.0),
+#             (0.622217, -0.022502, 0.0),
+#             (1.06406, -0.047879, 0.0),
+#             (0.753279, -0.085571, 0.0),
+#             (0.90478, -0.025302, 0.0)]
+#             ]
+#     make_curve(self, context, verts, lhandles, rhandles)
+#
+#
+# def add_type4(self, context):
+#
+#     scale_x = self.scale_x
+#     scale_y = self.scale_y
+#     verts = [
+#             [0.072838, -0.071461,
+#             0.0, -0.175451, -0.130711,
+#             0.0, 0.207269, 0.118064,
+#             0.0, 0, -1.0, 0.0]
+#             ]
+#     lhandles = [
+#             [(0.042135, 0.039756, 0),
+#             (-0.086769, -0.265864, 0),
+#             (0.002865, 0.364657, 0),
+#             (0.233116, -0.596115, 0)]
+#             ]
+#     rhandles = [
+#             [(0.103542, -0.182683, 0),
+#             (-0.327993, 0.101765, 0),
+#             (0.417702, -0.135803, 0),
+#             (-0.233116, -1.403885, 0)]
+#             ]
+#     make_curve(self, context, verts, lhandles, rhandles)
+#
+#
+# def add_type1(self, context):
+#
+#     scale_x = self.scale_x
+#     scale_y = self.scale_y
+#     verts = [
+#             [-0.71753, -0.08781,
+#             0, -0.60337, -0.31612, 0,
+#             -0.93266, 0, 0, 0, 0, 0, 0.93266,
+#             0, 0, 0.60337, 0.31612,
+#             0, 0.71753, 0.08781, 0]
+#             ]
+#     lhandles = [
+#             [(-0.81885, -0.143002, 0),
+#             (-0.491926, -0.199026, 0),
+#             (-1.126316, -0.255119, 0),
+#             (-0.446315, 0.135164, 0),
+#             (0.733297, -0.26265, 0),
+#             (0.795065, 0.517532, 0),
+#             (0.616204, 0.03262, 0)]
+#             ]
+#     rhandles = [
+#             [(-0.616204, -0.032618, 0),
+#             (-0.795067, -0.517532, 0),
+#             (-0.733297, 0.262651, 0),
+#             (0.446315, -0.135163, 0),
+#             (1.126316, 0.255119, 0),
+#             (0.491924, 0.199026, 0),
+#             (0.81885, 0.143004, 0)]
+#             ]
+#     make_curve(self, context, verts, lhandles, rhandles)
 
 
-def add_type8(self, context):
-
-    scale_x = self.scale_x
-    scale_y = self.scale_y
-    verts = [
-            [-0.850431 * scale_x, -0.009091 * scale_y,
-            0.0, -0.818807 * scale_x, -0.130518 * scale_y,
-            0.0, -0.944931 * scale_x, 0.055065 * scale_y,
-            0.0, -0.393355 * scale_x, -0.035521 * scale_y,
-            0.0, 0.0 * scale_x, 0.348298 * scale_y,
-            0.0, 0.393355 * scale_x, -0.035521 * scale_y,
-            0.0, 0.978373 * scale_x, 0.185638 * scale_y,
-            0.0, 0.771617 * scale_x, 0.272819 * scale_y,
-            0.0, 0.864179 * scale_x, 0.188103 * scale_y, 0.0]
-            ]
-    lhandles = [
-            [(-0.90478 * scale_x, -0.025302 * scale_y, 0.0),
-            (-0.753279 * scale_x, -0.085571 * scale_y, 0.0),
-            (-1.06406 * scale_x, -0.047879 * scale_y, 0.0),
-            (-0.622217 * scale_x, -0.022501 * scale_y, 0.0),
-            (0.181 * scale_x, 0.34879 * scale_y, 0.0),
-            (-0.101464 * scale_x, -0.063669 * scale_y, 0.0),
-            (0.933064 * scale_x, 0.03001 * scale_y, 0.0),
-            (0.82418 * scale_x, 0.39899 * scale_y, 0.0),
-            (0.827377 * scale_x, 0.144945 * scale_y, 0.0)]
-            ]
-    rhandles = [
-            [(-0.796079 * scale_x, 0.007121 * scale_y, 0.0),
-            (-0.931521 * scale_x, -0.207832 * scale_y, 0.0),
-            (-0.822288 * scale_x, 0.161045 * scale_y, 0.0),
-            (0.101464 * scale_x, -0.063671 * scale_y, 0.0),
-            (-0.181193 * scale_x, 0.347805 * scale_y, 0.0),
-            (0.622217 * scale_x, -0.022502 * scale_y, 0.0),
-            (1.022383 * scale_x, 0.336808 * scale_y, 0.0),
-            (0.741059 * scale_x, 0.199468 * scale_y, 0.0),
-            (0.900979 * scale_x, 0.231258 * scale_y, 0.0)]
-            ]
-    make_curve(self, context, verts, lhandles, rhandles)
-
-
-def add_type3(self, context):
-
-    scale_x = self.scale_x
-    scale_y = self.scale_y
-    verts = [
-            [-0.78652 * scale_x, -0.070157 * scale_y,
-            0.0, -0.697972 * scale_x, -0.247246 * scale_y,
-            0.0, -0.953385 * scale_x, -0.002048 * scale_y,
-            0.0, 0.0 * scale_x, 0.0 * scale_y,
-            0.0, 0.917448 * scale_x, 0.065788 * scale_y,
-            0.0, 0.448535 * scale_x, 0.515947 * scale_y,
-            0.0, 0.6111 * scale_x, 0.190831 * scale_y, 0.0]
-            ]
-    lhandles = [
-            [(-0.86511 * scale_x, -0.112965 * scale_y, 0.0),
-            (-0.61153 * scale_x, -0.156423 * scale_y, 0.0),
-            (-1.103589 * scale_x, -0.199934 * scale_y, 0.0),
-            (-0.446315 * scale_x, 0.135163 * scale_y, 0.0),
-            (0.669383 * scale_x, -0.254463 * scale_y, 0.0),
-            (0.721512 * scale_x, 0.802759 * scale_y, 0.0),
-            (0.466815 * scale_x, 0.112232 * scale_y, 0.0)]
-            ]
-    rhandles = [
-            [(-0.707927 * scale_x, -0.027348 * scale_y, 0.0),
-            (-0.846662 * scale_x, -0.40347 * scale_y, 0.0),
-            (-0.79875 * scale_x, 0.201677 * scale_y, 0.0),
-            (0.446315 * scale_x, -0.135163 * scale_y, 0.0),
-            (1.196752 * scale_x, 0.42637 * scale_y, 0.0),
-            (0.289834 * scale_x, 0.349204 * scale_y, 0.0),
-            (0.755381 * scale_x, 0.269428 * scale_y, 0.0)]
-            ]
-    make_curve(self, context, verts, lhandles, rhandles)
-
-
-def add_type2(self, context):
-
-    scale_x = self.scale_x
-    scale_y = self.scale_y
-    verts = [
-            [-0.719632 * scale_x, -0.08781 * scale_y, 0.0,
-            -0.605138 * scale_x, -0.31612 * scale_y, 0.0,
-            -0.935392 * scale_x, 0.0, 0.0,
-            0.0, 0.0, 0.0,
-            0.935392 * scale_x, 0.0, 0.0,
-            0.605138 * scale_x, -0.316119 * scale_y, 0.0,
-            0.719632 * scale_x, -0.08781 * scale_y, 0.0]
-            ]
-    lhandles = [
-            [(-0.82125 * scale_x, -0.142999 * scale_y, 0.0),
-            (-0.493366 * scale_x, -0.199027 * scale_y, 0.0),
-            (-1.129601 * scale_x, -0.25513 * scale_y, 0.0),
-            (-0.467584 * scale_x, 0.00044 * scale_y, 0.0),
-            (0.735439 * scale_x, 0.262646 * scale_y, 0.0),
-            (0.797395 * scale_x, -0.517531 * scale_y, 0.0),
-            (0.618012 * scale_x, -0.032614 * scale_y, 0.0)]
-            ]
-    rhandles = [
-            [(-0.618009 * scale_x, -0.032618 * scale_y, 0.0),
-            (-0.797396 * scale_x, -0.517532 * scale_y, 0.0),
-            (-0.735445 * scale_x, 0.262669 * scale_y, 0.0),
-            (0.468041 * scale_x, -0.00044 * scale_y, 0.0),
-            (1.129616 * scale_x, -0.255119 * scale_y, 0.0),
-            (0.493365 * scale_x, -0.199025 * scale_y, 0.0),
-            (0.821249 * scale_x, -0.143004 * scale_y, 0.0)]
-            ]
-    make_curve(self, context, verts, lhandles, rhandles)
-
-
-def add_type10(self, context):
-
-    scale_x = self.scale_x
-    scale_y = self.scale_y
-    verts = [
-            [-0.999637 * scale_x, 0.000348 * scale_y,
-            0.0, 0.259532 * scale_x, -0.017841 * scale_y,
-            0.0, 0.482303 * scale_x, 0.780429 * scale_y,
-            0.0, 0.573183 * scale_x, 0.506898 * scale_y, 0.0],
-            [0.259532 * scale_x, -0.017841 * scale_y,
-            0.0, 0.554919 * scale_x, -0.140918 * scale_y,
-            0.0, 0.752264 * scale_x, -0.819275 * scale_y,
-            0.0, 0.824152 * scale_x, -0.514881 * scale_y, 0.0]
-            ]
-    lhandles = [
-            [(-1.258333 * scale_x, -0.258348 * scale_y, 0.0),
-            (-0.240006 * scale_x, -0.15259 * scale_y, 0.0),
-            (0.79037 * scale_x, 0.857575 * scale_y, 0.0),
-            (0.376782 * scale_x, 0.430157 * scale_y, 0.0)],
-            [(0.224917 * scale_x, -0.010936 * scale_y, 0.0),
-            (0.514858 * scale_x, -0.122809 * scale_y, 0.0),
-            (1.057957 * scale_x, -0.886925 * scale_y, 0.0),
-            (0.61945 * scale_x, -0.464285 * scale_y, 0.0)]
-            ]
-    rhandles = [
-            [(-0.74094 * scale_x, 0.259045 * scale_y, 0.0),
-            (0.768844 * scale_x, 0.119545 * scale_y, 0.0),
-            (0.279083 * scale_x, 0.729538 * scale_y, 0.0),
-            (0.643716 * scale_x, 0.534458 * scale_y, 0.0)],
-            [(0.294147 * scale_x, -0.024746 * scale_y, 0.0),
-            (1.03646 * scale_x, -0.358598 * scale_y, 0.0),
-            (0.547718 * scale_x, -0.774008 * scale_y, 0.0),
-            (0.897665 * scale_x, -0.533051 * scale_y, 0.0)]
-            ]
-    make_curve(self, context, verts, lhandles, rhandles)
-
-
-def add_type9(self, context):
-
-    scale_x = self.scale_x
-    scale_y = self.scale_y
-    verts = [
-            [0.260968 * scale_x, -0.668118 * scale_y,
-            0.0, 0.108848 * scale_x, -0.381587 * scale_y,
-            0.0, 0.537002 * scale_x, -0.77303 * scale_y,
-            0.0, -0.600421 * scale_x, -0.583106 * scale_y,
-            0.0, -0.600412 * scale_x, 0.583103 * scale_y,
-            0.0, 0.537002 * scale_x, 0.773025 * scale_y,
-            0.0, 0.108854 * scale_x, 0.381603 * scale_y,
-            0.0, 0.260966 * scale_x, 0.668129 * scale_y, 0.0]
-            ]
-    lhandles = [
-            [(0.387973 * scale_x, -0.594856 * scale_y, 0.0),
-            (-0.027835 * scale_x, -0.532386 * scale_y, 0.0),
-            (0.775133 * scale_x, -0.442883 * scale_y, 0.0),
-            (-0.291333 * scale_x, -1.064385 * scale_y, 0.0),
-            (-0.833382 * scale_x, 0.220321 * scale_y, 0.0),
-            (0.291856 * scale_x, 1.112891 * scale_y, 0.0),
-            (0.346161 * scale_x, 0.119777 * scale_y, 0.0),
-            (0.133943 * scale_x, 0.741389 * scale_y, 0.0)]
-            ]
-    rhandles = [
-            [(0.133951 * scale_x, -0.741386 * scale_y, 0.0),
-            (0.346154 * scale_x, -0.119772 * scale_y, 0.0),
-            (0.291863 * scale_x, -1.112896 * scale_y, 0.0),
-            (-0.833407 * scale_x, -0.220324 * scale_y, 0.0),
-            (-0.29134 * scale_x, 1.064389 * scale_y, 0.0),
-            (0.775125 * scale_x, 0.442895 * scale_y, 0.0),
-            (-0.029107 * scale_x, 0.533819 * scale_y, 0.0),
-            (0.387981 * scale_x, 0.594873 * scale_y, 0.0)]
-            ]
-    make_curve(self, context, verts, lhandles, rhandles)
-
-
-def add_type7(self, context):
-
-    scale_x = self.scale_x
-    scale_y = self.scale_y
-    verts = [
-            [-0.850431 * scale_x, -0.009091 * scale_y,
-            0.0, -0.818807 * scale_x, -0.130518 * scale_y,
-            0.0, -0.944931 * scale_x, 0.055065 * scale_y, 0.0,
-            -0.393355 * scale_x, -0.035521 * scale_y,
-            0.0, 0.0 * scale_x, 0.348298 * scale_y,
-            0.0, 0.393355 * scale_x, -0.035521 * scale_y,
-            0.0, 0.944931 * scale_x, 0.055065 * scale_y,
-            0.0, 0.818807 * scale_x, -0.130518 * scale_y,
-            0.0, 0.850431 * scale_x, -0.009091 * scale_y, 0.0]
-            ]
-    lhandles = [
-            [(-0.90478 * scale_x, -0.025302 * scale_y, 0.0),
-            (-0.753279 * scale_x, -0.085571 * scale_y, 0.0),
-            (-1.06406 * scale_x, -0.047879 * scale_y, 0.0),
-            (-0.622217 * scale_x, -0.022502 * scale_y, 0.0),
-            (0.181 * scale_x, 0.348791 * scale_y, 0.0),
-            (-0.101464 * scale_x, -0.063671 * scale_y, 0.0),
-            (0.822288 * scale_x, 0.161045 * scale_y, 0.0),
-            (0.931521 * scale_x, -0.207832 * scale_y, 0.0),
-            (0.796079 * scale_x, 0.007121 * scale_y, 0.0)]
-            ]
-    rhandles = [
-            [(-0.796079 * scale_x, 0.007121 * scale_y, 0.0),
-            (-0.931521 * scale_x, -0.207832 * scale_y, 0.0),
-            (-0.822288 * scale_x, 0.161045 * scale_y, 0.0),
-            (0.101464 * scale_x, -0.063671 * scale_y, 0.0),
-            (-0.181193 * scale_x, 0.347805 * scale_y, 0.0),
-            (0.622217 * scale_x, -0.022502 * scale_y, 0.0),
-            (1.06406 * scale_x, -0.047879 * scale_y, 0.0),
-            (0.753279 * scale_x, -0.085571 * scale_y, 0.0),
-            (0.90478 * scale_x, -0.025302 * scale_y, 0.0)]
-            ]
-    make_curve(self, context, verts, lhandles, rhandles)
-
-
-def add_type4(self, context):
-
-    scale_x = self.scale_x
-    scale_y = self.scale_y
-    verts = [
-            [0.072838 * scale_x, -0.071461 * scale_y,
-            0.0, -0.175451 * scale_x, -0.130711 * scale_y,
-            0.0, 0.207269 * scale_x, 0.118064 * scale_y,
-            0.0, 0 * scale_x, -1.0 * scale_y, 0.0]
-            ]
-    lhandles = [
-            [(0.042135 * scale_x, 0.039756 * scale_y, 0),
-            (-0.086769 * scale_x, -0.265864 * scale_y, 0),
-            (0.002865 * scale_x, 0.364657 * scale_y, 0),
-            (0.233116 * scale_x, -0.596115 * scale_y, 0)]
-            ]
-    rhandles = [
-            [(0.103542 * scale_x, -0.182683 * scale_y, 0),
-            (-0.327993 * scale_x, 0.101765 * scale_y, 0),
-            (0.417702 * scale_x, -0.135803 * scale_y, 0),
-            (-0.233116 * scale_x, -1.403885 * scale_y, 0)]
-            ]
-    make_curve(self, context, verts, lhandles, rhandles)
-
-
-def add_type1(self, context):
-
-    scale_x = self.scale_x
-    scale_y = self.scale_y
-    verts = [
-            [-0.71753 * scale_x, -0.08781 * scale_y,
-            0, -0.60337 * scale_x, -0.31612 * scale_y, 0,
-            -0.93266 * scale_x, 0, 0, 0, 0, 0, 0.93266 * scale_x,
-            0, 0, 0.60337 * scale_x, 0.31612 * scale_y,
-            0, 0.71753 * scale_x, 0.08781 * scale_y, 0]
-            ]
-    lhandles = [
-            [(-0.81885 * scale_x, -0.143002 * scale_y, 0),
-            (-0.491926 * scale_x, -0.199026 * scale_y, 0),
-            (-1.126316 * scale_x, -0.255119 * scale_y, 0),
-            (-0.446315 * scale_x, 0.135164 * scale_y, 0),
-            (0.733297 * scale_x, -0.26265 * scale_y, 0),
-            (0.795065 * scale_x, 0.517532 * scale_y, 0),
-            (0.616204 * scale_x, 0.03262 * scale_y, 0)]
-            ]
-    rhandles = [
-            [(-0.616204 * scale_x, -0.032618 * scale_y, 0),
-            (-0.795067 * scale_x, -0.517532 * scale_y, 0),
-            (-0.733297 * scale_x, 0.262651 * scale_y, 0),
-            (0.446315 * scale_x, -0.135163 * scale_y, 0),
-            (1.126316 * scale_x, 0.255119 * scale_y, 0),
-            (0.491924 * scale_x, 0.199026 * scale_y, 0),
-            (0.81885 * scale_x, 0.143004 * scale_y, 0)]
-            ]
-    make_curve(self, context, verts, lhandles, rhandles)
-
-
-def make_curve(self, context, verts, lh, rh):
+def make_curve(self, context, verts):
 
     types = self.types
+    curveData = bpy.data.curves.new(name=label, type='CURVE')
+#    curveData.dimensions = '3D'
+#    curveData.resolution_u = 2
 
-    # create object
-    if bpy.context.mode == 'EDIT_CURVE':
-        Curve = context.active_object
 
-        for spline in Curve.data.splines:
-            if spline.type == 'BEZIER':
-                for point in spline.bezier_points:
-                    point.select_control_point = False
-                    point.select_left_handle = False
-                    point.select_right_handle = False
-            else:
-                for point in spline.points:
-                    point.select = False
+    newSpline = curveData.splines.new('POLY')
+    newSpline.points.add(len(verts)-1)
+    for i, coord in enumerate(verts):
+     x,y,z = coord
+     newSpline.points[i].co = (x, y, z, 1)
 
-        for p in range(len(verts)):
-            c = 0
-            newSpline = Curve.data.splines.new(type='BEZIER')          # newSpline
-            newSpline.bezier_points.add(int(len(verts[p]) / 3 - 1))
-            newSpline.bezier_points.foreach_set('co', verts[p])
+    # create Object
+    Curve = object_data_add(context, curveData, operator=self)
+    Curve.select_set(True) # place in active scene
 
-            for bp in newSpline.bezier_points:
-                bp.handle_left_type = 'ALIGNED'
-                bp.handle_right_type = 'ALIGNED'
-                bp.handle_left.xyz = lh[p][c]
-                bp.handle_right.xyz = rh[p][c]
-                bp.select_control_point = True
-                bp.select_left_handle = True
-                bp.select_right_handle = True
-                c += 1
-            # something weird with this one
-            if types == 1 or types == 2 or types == 3:
-                newSpline.bezier_points[3].handle_left.xyz = lh[p][3]
 
-    else:
-        # create curve
-        dataCurve = bpy.data.curves.new(name='RigCurve', type='CURVE')  # curvedatablock
-        for p in range(len(verts)):
-            c = 0
-            newSpline = dataCurve.splines.new(type='BEZIER')          # newSpline
-            newSpline.bezier_points.add(int(len(verts[p]) / 3 - 1))
-            newSpline.bezier_points.foreach_set('co', verts[p])
 
-            for bp in newSpline.bezier_points:
-                bp.handle_left_type = 'ALIGNED'
-                bp.handle_right_type = 'ALIGNED'
-                bp.handle_left.xyz = lh[p][c]
-                bp.handle_right.xyz = rh[p][c]
-                bp.select_control_point = True
-                bp.select_left_handle = True
-                bp.select_right_handle = True
-                c += 1
-            # something weird with this one
-            if types == 1 or types == 2 or types == 3:
-                newSpline.bezier_points[3].handle_left.xyz = lh[p][3]
+#    # create object
+#    if bpy.context.mode == 'EDIT_CURVE':
+#        Curve = context.active_object
 
-        # create object with newCurve
-        Curve = object_data_add(context, dataCurve, operator=self)  # place in active scene
-        Curve.select_set(True)
+#        for spline in Curve.data.splines:
+#                for point in spline.points:
+#                    point.select = False
+
+#        for p in range(len(verts)):
+#            c = 0
+#            newSpline = Curve.data.splines.new(type='POLY')          # newSpline
+#
+
+#    else:
+#        # create curve
+#        dataCurve = bpy.data.curves.new(name='RigCurve', type='CURVE')  # curvedatablock
+#        for p in range(len(verts)):
+#            c = 0
+#            newSpline = dataCurve.splines.new(type='POLY')          # newSpline
+#
+
+#        # create object with newCurve
+#        Curve = object_data_add(context, dataCurve, operator=self)  # place in active scene
+
 
     # set curveOptions
     Curve.data.dimensions = self.shape

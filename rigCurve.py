@@ -65,41 +65,24 @@ def add_4DirArrow(self, context, label):
     make_curve(self, context, verts, label)
 
 #
-# def add_type5(self, context):
-#
-#     scale_x = self.scale_x
-#     scale_y = self.scale_y
-#     verts = [
-#             [0.047131, 0.065832, 0.0,
-#             0.010396, -0.186771, 0.0,
-#             0.076107, 0.19414, 0.0,
-#             0.0, -1.0, 0.0],
-#             [0.086336, -0.377611, 0.0,
-#             0.022417, -0.461301, 0.0,
-#             0.079885, -0.281968, 0.0,
-#             0.129212, -0.747702, 0.0]
-#             ]
-#     lhandles = [
-#             [(-0.067558, 0.078419, 0.0),
-#             (0.168759, -0.154335, 0.0),
-#             (-0.236823, 0.262436, 0.0),
-#             (0.233116, -0.596115, 0.0)],
-#             [(0.047518, -0.350065, 0.0),
-#             (0.086012, -0.481379, 0.0),
-#             (-0.049213, -0.253793, 0.0),
-#             (0.208763, -0.572534, 0.0)]
-#             ]
-#     rhandles = [
-#             [(0.161825, 0.053245, 0.0),
-#             (-0.262003, -0.242566, 0.0),
-#             (0.519691, 0.097329, 0.0),
-#             (-0.233116, -1.403885, 0.0)],
-#             [(0.125156, -0.405159, 0.0),
-#             (-0.086972, -0.426766, 0.0),
-#             (0.262886, -0.321908, 0.0),
-#             (0.049661, -0.92287, 0.0)]
-#             ]
-#     make_curve(self, context, verts, lhandles, rhandles)
+def add_Arrow(self, context, label):
+
+    label = "Arrow"
+    scale_x = self.scale_x
+    scale_y = self.scale_y
+    verts = [
+           (-1, 0, 0),
+           (-2, 0, 0),
+           (0, 0, -3),
+           (2, 0, 0),
+           (1, 0, 0),
+           (1, 0, 3),
+           (-1, 0, 3),
+           (-1, 0, 0)
+            ]
+
+
+    make_curve(self, context, verts, label)
 #
 #
 # def add_type8(self, context):
@@ -534,10 +517,10 @@ class add_rigcurve(Operator, AddObjectHelper):
 #            add_type3(self, context)
 #        if self.types == 4:
 #            add_type4(self, context)
-#        if self.types == 5:
-#            add_type5(self, context)
+        if self.types == 5:
+            add_Arrow(self, context, 'Arrow')
         if self.types == 6:
-            add_4DirArrow(self, context, "4DirArrow")
+            add_4DirArrow(self, context, '4DirArrow')
 #        if self.types == 7:
 #            add_type7(self, context)
 #        if self.types == 8:

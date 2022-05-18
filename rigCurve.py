@@ -14,6 +14,7 @@ bl_info = {
     "category": "Add Curve",
 }
 
+
 import bpy
 from bpy.types import Operator
 from bpy.props import (
@@ -33,14 +34,32 @@ def add_type6(self, context):
     scale_x = self.scale_x
     scale_y = self.scale_y
     verts = [
-            [0.047131 * scale_x, 0.065832 * scale_y,
-            0.0, 0.010396 * scale_x, -0.186771 * scale_y,
-            0.0, 0.076107 * scale_x, 0.19414 * scale_y,
-            0.0, 0.0 * scale_x, -1.0 * scale_y, 0.0],
-            [0.451396 * scale_x, -0.48376 * scale_y,
-            0.0, 0.433623 * scale_x, -0.587557 * scale_y,
-            0.0, 0.525837 * scale_x, -0.423363 * scale_y,
-            0.0, 0.15115 * scale_x, -0.704345 * scale_y, 0.0]
+            [-1.009675 * scale_x, -0.977991 * scale_y, 0.0,
+            -1.009675 * scale_x, -3.017713 * scale_y, 0.0,
+            -1.009675 * scale_x, -3.017713 * scale_y, 0.0,
+            -2 * scale_x, -3 * scale_y, 0.0],
+            [0 * scale_x, -5 * scale_y, 0.0,
+            2 * scale_x, -3 * scale_y, 0.0,
+            1 * scale_x, -3 * scale_y, 0.0,
+            1 * scale_x, -1 * scale_y, 0.0]
+#            ((3 * scale_x, -1 * scale_y, 0)),
+#            ((3 * scale_x, -2 * scale_y, 0)),
+#            ((5 * scale_x, 0 * scale_y, 0)),
+#            ((3 * scale_x, 2 * scale_y, 0)),
+#            ((3 * scale_x, 1 * scale_y, 0)),
+#            ((1 * scale_x, 1 * scale_y, 0)),
+#            ((1 * scale_x, 3 * scale_y, 0)),
+#            ((2 * scale_x, 3 * scale_y, 0)),
+#            ((0 * scale_x, 5 * scale_y, 0)),
+#            ((-2 * scale_x, 3 * scale_y, 0)),
+#            ((-1 * scale_x, 3 * scale_y, 0)),
+#            ((-1 * scale_x, 1 * scale_y, 0)),
+#            ((-3 * scale_x, 1 * scale_y, 0)),
+#            ((-3 * scale_x, 2 * scale_y, 0)),
+#            ((-5 * scale_x, 0 * scale_y, 0)),
+#            ((-3 * scale_x, -2 * scale_y, 0)),
+#            ((-3 * scale_x, -1 * scale_y, 0)),
+#            ((-1 * scale_x, -1 * scale_y, 0)),
             ]
     lhandles = [
             [(-0.067558 * scale_x, 0.078418 * scale_y, 0.0),
@@ -420,7 +439,7 @@ def make_curve(self, context, verts, lh, rh):
 
     else:
         # create curve
-        dataCurve = bpy.data.curves.new(name='CurlyCurve', type='CURVE')  # curvedatablock
+        dataCurve = bpy.data.curves.new(name='RigCurve', type='CURVE')  # curvedatablock
         for p in range(len(verts)):
             c = 0
             newSpline = dataCurve.splines.new(type='BEZIER')          # newSpline
@@ -477,16 +496,16 @@ def make_curve(self, context, verts, lh, rh):
             bpy.ops.transform.rotate(value = self.rotation[1], orient_axis = 'Y')
             bpy.ops.transform.rotate(value = self.rotation[2], orient_axis = 'Z')
 
-class add_curlycurve(Operator, AddObjectHelper):
-    bl_idname = "curve.curlycurve"
-    bl_label = "Add Curly Curve"
-    bl_description = "Create a Curly Curve"
+class add_rigcurve(Operator, AddObjectHelper):
+    bl_idname = "curve.rigcurve"
+    bl_label = "Add Rig ContrCurve"
+    bl_description = "Create a Rig Contr Curve"
     bl_options = {'REGISTER', 'UNDO', 'PRESET'}
 
     types : IntProperty(
             name="Type",
-            description="Type of curly curve",
-            default=1,
+            description="Type of rig curve",
+            default=6,
             min=1, max=10
             )
     scale_x : FloatProperty(
@@ -544,26 +563,26 @@ class add_curlycurve(Operator, AddObjectHelper):
         use_enter_edit_mode = bpy.context.preferences.edit.use_enter_edit_mode
         bpy.context.preferences.edit.use_enter_edit_mode = False
 
-        if self.types == 1:
-            add_type1(self, context)
-        if self.types == 2:
-            add_type2(self, context)
-        if self.types == 3:
-            add_type3(self, context)
-        if self.types == 4:
-            add_type4(self, context)
-        if self.types == 5:
-            add_type5(self, context)
+#        if self.types == 1:
+#            add_type1(self, context)
+#        if self.types == 2:
+#            add_type2(self, context)
+#        if self.types == 3:
+#            add_type3(self, context)
+#        if self.types == 4:
+#            add_type4(self, context)
+#        if self.types == 5:
+#            add_type5(self, context)
         if self.types == 6:
             add_type6(self, context)
-        if self.types == 7:
-            add_type7(self, context)
-        if self.types == 8:
-            add_type8(self, context)
-        if self.types == 9:
-            add_type9(self, context)
-        if self.types == 10:
-            add_type10(self, context)
+#        if self.types == 7:
+#            add_type7(self, context)
+#        if self.types == 8:
+#            add_type8(self, context)
+#        if self.types == 9:
+#            add_type9(self, context)
+#        if self.types == 10:
+#            add_type10(self, context)
 
         if use_enter_edit_mode:
             bpy.ops.object.mode_set(mode = 'EDIT')
@@ -581,22 +600,22 @@ class add_curlycurve(Operator, AddObjectHelper):
 
 # Registration
 
-def add_curlycurve_button(self, context):
+def add_rigcurve_button(self, context):
     self.layout.operator(
-            add_curlycurve.bl_idname,
-            text="Add Curly Curve",
+            add_rigcurve.bl_idname,
+            text="Add Rig Contr Curve",
             icon='PLUGIN'
             )
 
 
 def register():
-    bpy.utils.register_class(add_curlycurve)
-    #bpy.types.INFO_MT_curve_add.append(add_curlycurve_button)
+    bpy.utils.register_class(add_rigcurve)
+    bpy.types.VIEW3D_MT_curve_add.append(add_rigcurve_button)
 
 
 def unregister():
-    bpy.utils.unregister_class(add_curlycurve)
-    #bpy.types.INFO_MT_curve_add.remove(add_curlycurve_button)
+    bpy.utils.unregister_class(add_rigcurve)
+    bpy.types.VIEW3D_MT_curve_add.remove(add_rigcurve_button)
 
 
 if __name__ == "__main__":

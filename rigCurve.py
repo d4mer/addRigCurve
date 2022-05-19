@@ -83,48 +83,20 @@ def add_Arrow(self, context, label):
 
 
     make_curve(self, context, verts, label)
-#
-#
-# def add_type8(self, context):
-#
-#     scale_x = self.scale_x
-#     scale_y = self.scale_y
-#     verts = [
-#             [-0.850431, -0.009091,
-#             0.0, -0.818807, -0.130518,
-#             0.0, -0.944931, 0.055065,
-#             0.0, -0.393355, -0.035521,
-#             0.0, 0.0, 0.348298,
-#             0.0, 0.393355, -0.035521,
-#             0.0, 0.978373, 0.185638,
-#             0.0, 0.771617, 0.272819,
-#             0.0, 0.864179, 0.188103, 0.0]
-#             ]
-#     lhandles = [
-#             [(-0.90478, -0.025302, 0.0),
-#             (-0.753279, -0.085571, 0.0),
-#             (-1.06406, -0.047879, 0.0),
-#             (-0.622217, -0.022501, 0.0),
-#             (0.181, 0.34879, 0.0),
-#             (-0.101464, -0.063669, 0.0),
-#             (0.933064, 0.03001, 0.0),
-#             (0.82418, 0.39899, 0.0),
-#             (0.827377, 0.144945, 0.0)]
-#             ]
-#     rhandles = [
-#             [(-0.796079, 0.007121, 0.0),
-#             (-0.931521, -0.207832, 0.0),
-#             (-0.822288, 0.161045, 0.0),
-#             (0.101464, -0.063671, 0.0),
-#             (-0.181193, 0.347805, 0.0),
-#             (0.622217, -0.022502, 0.0),
-#             (1.022383, 0.336808, 0.0),
-#             (0.741059, 0.199468, 0.0),
-#             (0.900979, 0.231258, 0.0)]
-#             ]
-#     make_curve(self, context, verts, lhandles, rhandles)
-#
-#
+
+
+def add_type8(self, context label):
+
+    label = "Triangle"
+    scale_x = self.scale_x
+    scale_y = self.scale_y
+    verts = [
+            (0, 0.353553, 0), (-0.707107, -0.353553, 0), (0, -0.353553, 0.707107), (0, 0.353553, 0), (0.707107, -0.353553, 0), (0, -0.353553, -0.707107), (0, 0.353553, 0), (-0.707107, -0.353553, 0), (0, -0.353553, -0.707107), (0.707107, -0.353553, 0), (0, -0.353553, 0.707107), (-0.707107, -0.353553, 0)
+            ]
+
+    make_curve(self, context, verts, label)
+
+
 # def add_type3(self, context):
 #
 #     scale_x = self.scale_x
@@ -330,38 +302,35 @@ def add_Arrow(self, context, label):
 #             (-0.233116, -1.403885, 0)]
 #             ]
 #     make_curve(self, context, verts, lhandles, rhandles)
-#
-#
-# def add_type1(self, context):
-#
-#     scale_x = self.scale_x
-#     scale_y = self.scale_y
-#     verts = [
-#             [-0.71753, -0.08781,
-#             0, -0.60337, -0.31612, 0,
-#             -0.93266, 0, 0, 0, 0, 0, 0.93266,
-#             0, 0, 0.60337, 0.31612,
-#             0, 0.71753, 0.08781, 0]
-#             ]
-#     lhandles = [
-#             [(-0.81885, -0.143002, 0),
-#             (-0.491926, -0.199026, 0),
-#             (-1.126316, -0.255119, 0),
-#             (-0.446315, 0.135164, 0),
-#             (0.733297, -0.26265, 0),
-#             (0.795065, 0.517532, 0),
-#             (0.616204, 0.03262, 0)]
-#             ]
-#     rhandles = [
-#             [(-0.616204, -0.032618, 0),
-#             (-0.795067, -0.517532, 0),
-#             (-0.733297, 0.262651, 0),
-#             (0.446315, -0.135163, 0),
-#             (1.126316, 0.255119, 0),
-#             (0.491924, 0.199026, 0),
-#             (0.81885, 0.143004, 0)]
-#             ]
-#     make_curve(self, context, verts, lhandles, rhandles)
+
+
+def add_type1(self, context, label):
+
+    label = "TwoDir"
+    scale_x = self.scale_x
+    scale_y = self.scale_y
+    verts = [
+            (-1, 0, -2), (-2, 0, -2), (0, 0, -4), (2, 0, -2), (1, 0, -2), (1, 0, 1), (2, 0, 1), (0, 0, 3), (-2, 0, 1), (-1, 0, 1), (-1, 0, -2)
+            ]
+    lhandles = [
+            [(-0.81885, -0.143002, 0),
+            (-0.491926, -0.199026, 0),
+            (-1.126316, -0.255119, 0),
+            (-0.446315, 0.135164, 0),
+            (0.733297, -0.26265, 0),
+            (0.795065, 0.517532, 0),
+            (0.616204, 0.03262, 0)]
+            ]
+    rhandles = [
+            [(-0.616204, -0.032618, 0),
+            (-0.795067, -0.517532, 0),
+            (-0.733297, 0.262651, 0),
+            (0.446315, -0.135163, 0),
+            (1.126316, 0.255119, 0),
+            (0.491924, 0.199026, 0),
+            (0.81885, 0.143004, 0)]
+            ]
+    make_curve(self, context, verts, label)
 
 
 def make_curve(self, context, verts, label):
@@ -509,8 +478,8 @@ class add_rigcurve(Operator, AddObjectHelper):
         use_enter_edit_mode = bpy.context.preferences.edit.use_enter_edit_mode
         bpy.context.preferences.edit.use_enter_edit_mode = False
 
-#        if self.types == 1:
-#            add_type1(self, context)
+       if self.types == 1:
+           add_type1(self, context, "TwoDir")
 #        if self.types == 2:
 #            add_type2(self, context)
 #        if self.types == 3:
@@ -523,8 +492,8 @@ class add_rigcurve(Operator, AddObjectHelper):
             add_4DirArrow(self, context, '4DirArrow')
 #        if self.types == 7:
 #            add_type7(self, context)
-#        if self.types == 8:
-#            add_type8(self, context)
+       if self.types == 8:
+           add_type8(self, context, "Triangle")
 #        if self.types == 9:
 #            add_type9(self, context)
 #        if self.types == 10:

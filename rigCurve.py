@@ -446,7 +446,7 @@ class add_rigcurve(Operator, AddObjectHelper):
             name="Type",
             description="Type of rig curve",
             default=1,
-            min=1, max=100
+            min=1, max=26
             )
     scale_x : FloatProperty(
             name="Scale X",
@@ -456,6 +456,11 @@ class add_rigcurve(Operator, AddObjectHelper):
     scale_y : FloatProperty(
             name="Scale Y",
             description="Scale on Y axis",
+            default=1.0
+            )
+    scale_z : FloatProperty(
+            name="Scale Z",
+            description="Scale on Z axis",
             default=1.0
             )
     # Curve Options
@@ -484,6 +489,7 @@ class add_rigcurve(Operator, AddObjectHelper):
         col = layout.column(align=True)
         col.label(text = "Resize:")
         col.prop(self, "scale_x")
+        col.prop(self, "scale_y")
         col.prop(self, "scale_y")
 
         row = layout.row()
@@ -524,37 +530,37 @@ class add_rigcurve(Operator, AddObjectHelper):
         if self.types == 10:
             add_type10(self, context, "Cross")
         if self.types == 11:
-            add_type1(self, context, "Prism")
+            add_type11(self, context, "Prism")
         if self.types == 12:
-            add_type2(self, context, "IKFK")
+            add_type12(self, context, "IKFK")
         if self.types == 13:
-            add_type3(self, context, "Diamond")
+            add_type13(self, context, "Diamond")
         if self.types == 14:
-            add_type4(self, context, "ThreeDArrow")
+            add_type14(self, context, "ThreeDArrow")
         if self.types == 15:
-            add_Arrow(self, context, "SingleArrowCircleCtrl")
+            add_type15(self, context, "SingleArrowCircleCtrl")
         if self.types == 16:
-            add_4DirArrow(self, context, "DoubleArrowCircleCtrl")
+            add_type16(self, context, "DoubleArrowCircleCtrl")
         if self.types == 17:
-            add_type7(self, context, "ArcArrowCtrl")
+            add_type17(self, context, "ArcArrowCtrl")
         if self.types == 18:
-            add_type8(self, context, "ThreeArrowCtrl")
+            add_type18(self, context, "ThreeArrowCtrl")
         if self.types == 19:
-            add_type9(self, context, "ThreeArrowCircleCtrl")
+            add_type19(self, context, "ThreeArrowCircleCtrl")
         if self.types == 20:
-            add_type10(self, context, "FourArrowCtrlNarrow")
+            add_type20(self, context, "FourArrowCtrlNarrow")
         if self.types == 21:
-            add_type4(self, context, "FourArrowCtrlWide")
+            add_type21(self, context, "FourArrowCtrlWide")
         if self.types == 22:
-            add_Arrow(self, context, "CircleFourArrowCtrl")
+            add_type22(self, context, "CircleFourArrowCtrl")
         if self.types == 23:
-            add_4DirArrow(self, context, "CurvedFourArrowCtrl")
+            add_type23(self, context, "CurvedFourArrowCtrl")
         if self.types == 24:
-            add_type7(self, context, "TrapezoidalCtrl")
+            add_type24(self, context, "TrapezoidalCtrl")
         if self.types == 25:
-            add_type8(self, context, "flowerCtrl")
+            add_type25(self, context, "flowerCtrl")
         if self.types == 26:
-            add_type9(self, context, "SaddleCtrl")
+            add_type26(self, context, "SaddleCtrl")
 
 
         if use_enter_edit_mode:
